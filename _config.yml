@@ -1,6 +1,6 @@
-title:            OCPP Working Diary
-description:      It's a diary about working on OCPP based backend for Incharge Project.
-url:              # Site url.
+title:            OCPP Work Diary
+description:      A diary about working on a OCPP based backend for Incharge project.
+url:              http://alfmunny.github.io/ocpp-work-diary/ 
 signoff:          Yuanchen Zhang
 disqus_shortname: nodesoapdemo
 facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
@@ -24,5 +24,3 @@ markdown:         redcarpet
 redcarpet:
   extensions:
     - smart
-
-safe: false

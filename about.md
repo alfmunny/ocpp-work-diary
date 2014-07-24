@@ -3,8 +3,10 @@ layout: page
 title: About
 ---
 
-Give people something to read and get to know you. Here's my attempt: this is [Mu-An](http://muan.co), a designer developer who lives in London at the moment.
+This is [alfmunny](http://alfmunny.github.io), a master student living and studying in Munich at the moment.
 
-Tweet at [@muanchiou](http://twitter.com/muanchiou), read my code on [GitHub](http://github.com/muan), see my designs on [Dribbble](http://dribbble.com/muan), find my CV on [LinkedIn](http://uk.linkedin.com/in/muanchiou).
+Now i'm develoing a backend system for a charger server which is bases on OCPP at TU Munich.
 
-This theme is made by me. You have a nice day. ♥
+Read my code on [GitHub](http://github.com/alfmunny).
+
+You have a nice day. ♥
