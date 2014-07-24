@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OCPP Wokring Diary</title>
+    <description>It's a diary about working on OCPP based backend for Incharge Project.</description>
+    <link></link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Backend System von OCPP für Ladestation</title>
+        <description>&lt;h1&gt;Grundlage&lt;/h1&gt;
+
+&lt;h2&gt;Aktueller Stand in EU&lt;/h2&gt;
+
+&lt;p&gt;Driven by international incentives to reduce greenhouse gas emissions,
+interest in Electric Vehicle (EV) technology is growing rapidly throughout the world.
+To achieve the &lt;em&gt;EU 20-20-20&lt;/em&gt; targets, EVs will be massively rolled out across Europe
+Existing electricity networks are constrained by how much additional capacity
+they can provide for the high integration of EV recharging systems;
+taking into account additional emerging requirements for instance:
+the electrification of residential heating and the increase in distributed renewable generation.
+Such changes can be offset by a move towards a smarter network.[1]&lt;/p&gt;
+
+&lt;p&gt;Important Elements:[1]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Battery Technology&lt;/li&gt;
+&lt;li&gt;Electric Vehicle Supply Equipment (EVSE)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Information and Communication Technology (ICT)&lt;/p&gt;
+
+&lt;p&gt;giving support to their management, operation and maintenance.[4]&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Energy Management Systems&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Important Roles:[4]&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EV&lt;/li&gt;
+&lt;li&gt;EVSE(EV Supply Equipment)&lt;/li&gt;
+&lt;li&gt;EVSP(EV Service Provider)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Papers:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/s/28h7468lqdlhlbn/Kirby%20%E5%92%8C%20Hassan%20-%202012%20-%20AC%20Recharging%20Infrastructure%20for%20EVs%20and%20future%20sm.pdf&quot;&gt;1. AC Recharging Infrastructure for EVs and Future Smart Grid&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/s/5494hcxqityy3sw/Kovacs%20%E7%AD%89.%20-%202013%20-%20Integrating%20EVs%20into%20the%20Smart-Grid.pdf&quot;&gt;2. Integrating EVs into the Smart-Grid&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/s/7a7vctnf09isvl4/Timpner%20%E5%92%8C%20Wolf%20-%202012%20-%20A%20back-end%20system%20for%20an%20autonomous%20parking%20and%20ch.pdf&quot;&gt;3. A back-end system for an autonomous parking and charging system for electric vehicles&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/s/4wssickc5it41vh/Rodriguez-Serrano%20%E7%AD%89.%20-%202013%20-%20A%20communication%20system%20from%20EV%20to%20EV%20Service%20Provi.pdf&quot;&gt;4. A communication system from EV to EV Service Provider based on OCPP over a wireless network&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/s/x9fb9b4sftr3or0/Lewandowski%20%E7%AD%89.%20-%202013%20-%20An%20ICT%20solution%20for%20integration%20of%20Electric%20Vehicl.pdf&quot;&gt;5. An ICT solution for integration of Electric Vehicles in grid balancing services&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Wiki links:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Interoperability&quot;&gt;Interoperability&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Charging_station&quot;&gt;Charge Station&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Articles and examples:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.plugincars.com/ultimate-guide-electric-car-charging-networks-126530.html&quot;&gt;The Ultimate Guide to Electric Car Charging Networks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.bosch-si.com/de/loesungen/mobility/unsere-loesungen/ocpp.html&quot;&gt;SKY Network&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;EU 20-20-20:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Die Notwendigkeit einer Steigerung der Energieeffizienz ist
+Teil des „20-20-20-Ziels“ für das Jahr 2020,
+das eine Senkung des Primärenergieverbrauchs der Union und der Treibhausgasemissionen um jeweils 20%
+sowie eine Anhebung des Anteils der erneuerbaren Energiequellen auf 20 % umfasst.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://europa.eu/legislation_summaries/energy/energy_efficiency/en0002_de.htm&quot;&gt;Energy Efficiency&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.e-control.at/de/konsumenten/oeko-energie/klima-und-umwelt/20-20-20-ziele&quot;&gt;Klima und Umwelt&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-20%2022.12.06.png&quot; alt=&quot;PEV Sales by Quarter &quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;EPRI-ET-Update_2013-11-21.pdf&quot;&gt;source: Plug-in Electric Vehicles Where Are We And What’s Next&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;OCPP: Open Charge Point Protocol&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.openchargealliance.org/&quot;&gt;OCPP&lt;/a&gt; is short for Open Charge Point Protocol,
+a popular language used for communications between&lt;/p&gt;
+
+&lt;p&gt;Developed by: &lt;a href=&quot;http://www.e-laad.nl/&quot;&gt;&lt;strong&gt;E-Laad Foundation&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;charging station hardware made by
+- ABB, Aeroviron- ment, Bosch, DBT, Eaton, Fuji, Schneider, Siemens, etc.&lt;/p&gt;
+
+&lt;p&gt;and the managing network systems
+- like ChargePoint, ECOtality, eVgo, Greenlots, OpConnect, SemaConnect, etc.&lt;/p&gt;
+
+&lt;p&gt;Useful links:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Open_Charge_Point_Protocol&quot;&gt;Wiki Open Charge Point Protocol&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OCPP Description:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.openchargealliance.org/sites/default/files/ocpp%201%205%20-%20a%20functional%20description%20v2%200_0_0.pdf&quot;&gt;OCPP 1.5 description&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OCPP Specification:
+&lt;a href=&quot;http://www.openchargealliance.org/sites/default/files/ocpp_specification_1.5_final.pdf&quot;&gt;OCPP 1.5 specification&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;WSDL files of OCPP:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.openchargealliance.org/sites/default/files/ocpp_centralsystemservice_1.5_final.wsdl&quot;&gt;OCPP Central System service description&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.openchargealliance.org/sites/default/files/ocpp_chargepointservice_1.5_final.wsdl&quot;&gt;OCPP Central System service description&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-21%2013.45.34.png&quot; alt=&quot;Signalverlauf von OCPP und Mode 3&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Controversy&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In the US&lt;/strong&gt;, however, OCPP hasn’t quite swept across the charging industry as it has elsewhere, and much of the EVSE that has been deployed was designed prior to OCPP being widely adopted.&lt;/p&gt;
+
+&lt;p&gt;The US OCPP controversy mainly stems from the fact that two companies (ECOtality and ChargePoint)
+have been the largest recipients of the government grants that kick-started the industry, and they
+don’t exclusively use OCPP. In many cases those networks use proprietary communication protocols
+that are unique to each com- pany. The gist of the gripe is that tax money was spent to give these
+companies a stranglehold on these publicly- funded installs - “vendor lock-in,” as some call it.&lt;/p&gt;
+
+&lt;h3&gt;Difference between OCPP and Collaboratev&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;OCPP&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Provides a standard path from EVSE to EVSP&lt;/li&gt;
+&lt;li&gt;Enables EVSE owner to change networks without replacing hardware&lt;/li&gt;
+&lt;li&gt;Prevents EVSE being stranded by a network provider going out of business&lt;/li&gt;
+&lt;li&gt;Doesn’t address roaming across networks or common user credentials&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Network Clearing House like Collaboratev or Hubject&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Allows consumers to roam across networks (note that the consumer may have
+to pay a roaming charge)&lt;/li&gt;
+&lt;li&gt;All networks must participate to enable seamless roaming for consumers&lt;/li&gt;
+&lt;li&gt;Needs to provide a common user credential to fully address roaming&lt;/li&gt;
+&lt;li&gt;There is a cost for this service – someone must pay&lt;/li&gt;
+&lt;li&gt;EVSE can still use a proprietary backhaul and participate&lt;/li&gt;
+&lt;li&gt;Doesn’t prevent stranded EVSE if a network provide fails&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://greenlots.com/wp-content/uploads/2013/06/Charge-Magazine-OCPP-Jun-2013.pdf&quot;&gt;Charge Magazine OCPP&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;EPRI-ET-Update_2013-11-21.pdf&quot;&gt;Plug-in Electric Vehicles Where Are We And What’s Next&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;SOAP&lt;/h2&gt;
+
+&lt;p&gt;SOAP, originally defined as Simple Object Access Protocol, is a protocol specification for exchanging structured information in the implementation of web services in computer networks. It relies on XML Information Set for its message format, and usually relies on other application layer protocols, most notably Hypertext Transfer Protocol (HTTP) or Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/SOAP.svg&quot; alt=&quot;Structure&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Example message:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;POST /InStock HTTP/1.1
+Host: www.example.org
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: 299
+SOAPAction: &amp;quot;http://www.w3.org/2003/05/soap-envelope&amp;quot;
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;
+&amp;lt;soap:Envelope xmlns:soap=&amp;quot;http://www.w3.org/2003/05/soap-envelope&amp;quot;&amp;gt;
+  &amp;lt;soap:Header&amp;gt;
+  &amp;lt;/soap:Header&amp;gt;
+  &amp;lt;soap:Body&amp;gt;
+    &amp;lt;m:GetStockPrice xmlns:m=&amp;quot;http://www.example.org/stock&amp;quot;&amp;gt;
+      &amp;lt;m:StockName&amp;gt;IBM&amp;lt;/m:StockName&amp;gt;
+    &amp;lt;/m:GetStockPrice&amp;gt;
+  &amp;lt;/soap:Body&amp;gt;
+&amp;lt;/soap:Envelope&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Communication:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-21%2011.45.16.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Useful links:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/SOAP&quot;&gt;Wiki SOAP&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;WSDL&lt;/h2&gt;
+
+&lt;p&gt;The Web Services Description Language (WSDL pronounced &amp;ldquo;wiz&amp;#39;-dul&amp;rdquo;) is an XML-based interface definition language that is used for describing the functionality offered by a web service. The acronym is also used for any specific WSDL description of a web service (also referred to as a WSDL file), which provides a machine-readable description of how the service can be called, what parameters it expects, and what data structures it returns. It thus serves a purpose that corresponds roughly to that of a method signature in a programming language.&lt;/p&gt;
+
+&lt;p&gt;Useful links:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://de.wikipedia.org/wiki/Web_Services_Description_Language&quot;&gt;Wiki WSDL&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Web Service&lt;/h2&gt;
+
+&lt;p&gt;A software system designed to support interoperable machine-to-machine interaction over a network. It has an interface described in a machine-processable format (specifically WSDL). Other systems interact with the Web service in a manner prescribed by its description using SOAP messages, typically conveyed using HTTP with an XML serialization in conjunction with other Web-related standards.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/Webservices.png&quot; alt=&quot;Web Service&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Useful links:
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Web_service&quot;&gt;Wiki Web Service&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Universal_Description_Discovery_and_Integration&quot;&gt;Wiki UDDI&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.w3schools.com/webservices/ws_wsdl_uddi.asp&quot;&gt;w3schools UDDI&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Discussions of SOAP, JSON, REST, WSDL, XML&lt;/h2&gt;
+
+&lt;p&gt;Useful links:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/16626021/json-rest-soap-wsdl-and-soa-how-do-they-all-link-together&quot;&gt;JSON, REST, SOAP, WSDL, and SOA: How do they all link together&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ibm.com/developerworks/webservices/library/ws-restwsdl/&quot;&gt;Describe REST Web services with WSDL 2.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.service-architecture.com/articles/web-services/web_services_explained.html&quot;&gt;Web Services Explained&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/5936380/wsdl-for-soap-and-wsdl-for-rest-and-rest-based-on-json&quot;&gt;WSDL for SOAP and WSDL for REST and REST based on JSON&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Frontend and Backend&lt;/h3&gt;
+
+&lt;p&gt;Frontend:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ember.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Backend:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;li&gt;Ruby on Rails&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Useful links:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html&quot;&gt;Ember Cli with Rails Part 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;Research of OCPP Backend&lt;/h1&gt;
+
+&lt;h2&gt;Simulator&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.gir.fr/ocppjs/&quot;&gt;ocppjs - An experimental OCPP Simulator&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The simulator can send JSON request with JSON-schema.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jeremydorn.com/json-editor/&quot;&gt;Principle of JSON-schema&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://json-schema.org/&quot;&gt;json-schema.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Communication with POSTMAN&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.getpostman.com/&quot;&gt;POSTMAN&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;soapUI&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.soapui.org/&quot;&gt;SoapUI - The Home of Functional Testing&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Communication with AJAX&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://powerful-dusk-5787.herokuapp.com/&quot;&gt;http://powerful-dusk-5787.herokuapp.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;node-soap&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/vpulim/node-soap&quot;&gt;Github: node-soap&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I have written a test demo using node-soap. Fetch the coad on my &lt;a href=&quot;https://github.com/alfmunny/node-soap-demo&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;server.js
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;soap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;soap&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ocppCentralSystemService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;CentralSystemService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;CentralSystemServiceSoap12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;Heartbeat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/Heartbeat&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                                &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+                                &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dateTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentTime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dateTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;Authorize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/Authorize&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+                                     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idTagInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFileSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;ocpp&lt;em&gt;centralsystemservice&lt;/em&gt;1.5_final.wsdl&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;404: Not Found: &amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;soap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ocppCentralSystemService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;client.js
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;soap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;soap&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://localhost:9000/?wsdl&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;soapHeader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;tns:chargeBoxIdentity soap:mustUnderstand=&amp;quot;true&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;&amp;#39;boxid&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/tns:chargeBoxIdentity&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;wsa5:To soap:mustUnderstand=&amp;quot;true&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://localhost:9000&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/wsa5:To&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;wsa5:Action soap:mustUnderstand=&amp;quot;true&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;&amp;#39;/Heartbeat&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+              &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/wsa5:Action&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;soap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endpoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http://localhost:9000/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CentralSystemService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CentralSystemServiceSoap12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Authorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addSoapHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;soapHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Heartbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Authorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idTag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Test with Postman&lt;/h3&gt;
+
+&lt;p&gt;Send SOAP request to node soap through POSTMAN to this demo server and get the identical respond back √&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Jul 2014 00:00:00 +0200</pubDate>
+        <link>/2014/07/23/my-diary/</link>
+        <guid isPermaLink="true">/2014/07/23/my-diary/</guid>
+      </item>
+    
+      <item>
+        <title>Scribble, a Jekyll theme</title>
+        <description>&lt;p&gt;I have other themes, checkout (mainly) &lt;a href=&quot;https://github.com/muan/muan.github.com/releases&quot;&gt;this repository&lt;/a&gt; and &lt;a href=&quot;https://github.com/muan/jekyll-wardrobe&quot;&gt;this repository&lt;/a&gt;. &amp;lt;3&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;There is no clever design philosophy to talk about, I tried to find something to work with, and &amp;lsquo;scribble&amp;rsquo; came to my mind. This theme uses Open Sans powered by Google Web Fonts, and was written in plain HTML, SCSS &amp;amp; CoffeeScript, though .scss &amp;amp; .coffee files wouldn&amp;rsquo;t be included in the theme.&lt;/p&gt;
+
+&lt;p&gt;The theme is mobile optimised but I did not check browser compatibility. It looks great in Chrome, Safari and Firefox though.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/muan/scribble&quot; target=&quot;_blank&quot; class=&quot;big-button gray&quot;&gt;Get it on GitHub &amp;hearts;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3&gt;Get started&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/muan/scribble/fork&quot;&gt;Fork the repository&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Clone the repository to your computer.&lt;br /&gt; &lt;code&gt;git clone https://github.com/username/scribble&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bundle install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;If using older versions of Jekyll&lt;/strong&gt;&lt;br /&gt;
+Build and run jekyll using &lt;code&gt;jekyll --server --auto&lt;/code&gt;.&lt;br /&gt;
+&lt;strong&gt;If using &lt;a href=&quot;http://blog.parkermoore.de/2013/05/06/jekyll-1-dot-0-released/&quot;&gt;Jekyll 1.0&lt;/a&gt;&lt;/strong&gt;&lt;br /&gt;
+Build Jekyll using &lt;code&gt;jekyll build&lt;/code&gt;.&lt;br /&gt;
+Then run Jekyll using &lt;code&gt;jekyll serve --watch&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Go to http://localhost:4000 for your site.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;h3&gt;Make it yours&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;I have extract most user specific information to &lt;code&gt;_config.yml&lt;/code&gt;, you should be able to set up almost everything from it.&lt;/li&gt;
+&lt;li&gt;Change about.md for blog intro.&lt;/li&gt;
+&lt;li&gt;For domain settings, see &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-pages&quot;&gt;the guide from GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;h3&gt;Options&lt;/h3&gt;
+
+&lt;p&gt;When writing a post, there are 3 options you can add to the header.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;disqus: y&lt;/strong&gt;&lt;br /&gt;
+If disqus is set to &amp;lsquo;y&amp;rsquo;, at the end of the post there will be a disqus thread, just like this one. To use disqus, you MUST &lt;a href=&quot;http://disqus.com/&quot;&gt;set up your own disqus account&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;share: y&lt;/strong&gt;&lt;br /&gt;
+An option for showing tweet and like button under a post.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;date&lt;/strong&gt;: 2013-05-06 18:07:17&lt;br /&gt;
+Date is not a required header since Jekyll reads the file name for date, this was added in only for the &lt;strong&gt;signoff time&lt;/strong&gt;. (as shown at the end of this post) If you don&amp;rsquo;t want the signoff time, go into &lt;code&gt;/includes/signoff.html&lt;/code&gt; and remove the &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/muan/scribble&quot; target=&quot;_blank&quot; class=&quot;big-button gray&quot;&gt;Get it on GitHub &amp;hearts;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3&gt;The end&lt;/h3&gt;
+
+&lt;p&gt;Like it? &lt;a href=&quot;http://twitter.com/muanchiou&quot;&gt;Tell me&lt;/a&gt;.&lt;br/&gt;
+Problem? &lt;a href=&quot;https://github.com/muan/scribble&quot;&gt;Use GitHub Issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;client.js 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;soap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;soap&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://localhost:9000/?wsdl&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;soapHeader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;tns:chargeBoxIdentity soap:mustUnderstand=&amp;quot;true&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                    &lt;span class=&quot;s1&quot;&gt;&amp;#39;boxid&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                  &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/tns:chargeBoxIdentity&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                  &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;wsa5:To soap:mustUnderstand=&amp;quot;true&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                    &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://localhost:9000&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                  &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/wsa5:To&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                  &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;wsa5:Action soap:mustUnderstand=&amp;quot;true&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                    &lt;span class=&quot;s1&quot;&gt;&amp;#39;/Heartbeat&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                  &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;/wsa5:Action&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;soap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createClient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endpoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;http://localhost:9000/&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CentralSystemService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CentralSystemServiceSoap12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Authorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addSoapHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;soapHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Heartbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Authorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;idTag&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 May 2013 18:27:31 +0200</pubDate>
+        <link>/2013/05/06/scribble-the-jekyll-theme/</link>
+        <guid isPermaLink="true">/2013/05/06/scribble-the-jekyll-theme/</guid>
+      </item>
+    
+      <item>
+        <title>Placeholder post</title>
+        <description>&lt;p&gt;I am a placeholder post. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Boom. I am a blockquote.&lt;/p&gt;
+
+&lt;p&gt;Say something really clever here.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;List with code&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;not highlighted
+multi line
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;List with code
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;boom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;whaaa&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;I have a friend called Bobobmob.&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;client.js
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;soap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;soap&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 06 May 2013 17:27:31 +0200</pubDate>
+        <link>/2013/05/06/more-post/</link>
+        <guid isPermaLink="true">/2013/05/06/more-post/</guid>
+      </item>
+    
+  </channel>
+</rss>

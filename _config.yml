@@ -1,0 +1,28 @@
+title:            OCPP Working Diary
+description:      It's a diary about working on OCPP based backend for Incharge Project.
+url:              # Site url.
+signoff:          Yuanchen Zhang
+disqus_shortname: nodesoapdemo
+facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
+google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
+
+links:
+  - name:         About
+    url:          /about
+  - name:         Incharge
+    url:          http://www.incharge.ei.tum.de/
+    external:     true
+  - name:         Email
+    url:          mailto:alfmunny@gmail.com
+    external:     true
+  - name:         GitHub
+    url:          http://github.com/alfmunny
+    external:     true
+highlighter:      pygments
+permalink:        pretty
+markdown:         redcarpet
+redcarpet:
+  extensions:
+    - smart
+
+safe: false

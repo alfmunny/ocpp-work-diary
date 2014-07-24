@@ -1,0 +1,564 @@
+<html>
+  <head>
+    <meta content='Backend System von OCPP für Ladestation - OCPP Wokring Diary' property='og:title' />
+    <title>Backend System von OCPP für Ladestation - OCPP Wokring Diary</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/toc.css">
+    <link href='/images/fav.png' rel='shortcut icon'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/style.css' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/syntax.css' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/responsive.css' rel='stylesheet' type='text/css' />
+<!-- - -->
+<script src='/javascripts/jquery.js' type='text/javascript'></script>
+<script src='/javascripts/pd.js' type='text/javascript'></script>
+<script src='/javascripts/basics.js' type='text/javascript'></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- - -->
+<meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
+<meta content='text/html; charset=utf-8' http-equiv='content-type' />
+<meta content="http://muan.co/images/og.png" property="og:image" />
+<meta content="" property="fb:app_id" />
+
+  <meta content='/2014/07/23/my-diary/' property='og:url' />
+  <meta content="# Grundlage## Aktueller Stand in EUDriven by international incentives to reduce greenhouse gas emissions,interest in ..." property='og:description' />
+  <meta content="article" property="og:type" />
+
+<!-- - -->
+<script type='text/javascript'>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  //]]>
+</script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=604714799556697";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  </head>
+  <body>
+    <header>
+<a id="go-back-home" href="/"><img src="/images/scribble.png" alt="scribble" width="53" height="59"></a>
+<p>OCPP Wokring Diary</p>
+</header>
+    <div id='container'>
+      <div class="block">
+  
+    <a target="_top" class="main" href="/about">About</a>
+  
+    <a target="_blank" class="main" href="http://www.incharge.ei.tum.de/">Incharge</a>
+  
+    <a target="_blank" class="main" href="mailto:alfmunny@gmail.com">Email</a>
+  
+    <a target="_blank" class="main" href="http://github.com/alfmunny">GitHub</a>
+  
+</div>
+      <section class="paging">
+  
+    <div class="left">
+      <a href="/2013/05/06/scribble-the-jekyll-theme/">
+        ‹
+      </a>
+    </div>
+  
+  
+</section>
+      <div class="content">
+        <section class='post'>
+          <h1 class="upcase">
+            <div class='date'>23 Jul 2014</div>
+            Backend System von OCPP für Ladestation
+          </h1>
+          <div id="toc-container">
+   <table class="toc" id="toc">
+      <tbody>
+         <tr>
+            <td>
+               <div id="toctitle">
+                  <h2>Contents</h2>
+               </div>
+               <ul>
+                  <li class="toc_level-1 toc_section-1">
+                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Grundlage</span></a>
+                     <ul>
+                        <li class="toc_level-2 toc_section-2">
+                           <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Aktueller Stand in EU</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-3">
+                           <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">OCPP: Open Charge Point Protocol</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-4">
+                           <a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">SOAP</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-5">
+                           <a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">WSDL</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-6">
+                           <a href="#tocAnchor-1-1-5"><span class="tocnumber">1.5</span> <span class="toctext">Web Service</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-7">
+                           <a href="#tocAnchor-1-1-6"><span class="tocnumber">1.6</span> <span class="toctext">Discussions of SOAP, JSON, REST, WSDL, XML</span></a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="toc_level-1 toc_section-8">
+                     <a href="#tocAnchor-1-8"><span class="tocnumber">2</span> <span class="toctext">Research of OCPP Backend</span></a>
+                     <ul>
+                        <li class="toc_level-2 toc_section-9">
+                           <a href="#tocAnchor-1-8-1"><span class="tocnumber">2.1</span> <span class="toctext">Simulator</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-10">
+                           <a href="#tocAnchor-1-8-2"><span class="tocnumber">2.2</span> <span class="toctext">soapUI</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-11">
+                           <a href="#tocAnchor-1-8-3"><span class="tocnumber">2.3</span> <span class="toctext">Communication with AJAX</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-12">
+                           <a href="#tocAnchor-1-8-4"><span class="tocnumber">2.4</span> <span class="toctext">node-soap</span></a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div><h1 id="tocAnchor-1-1">Grundlage</h1>
+
+<h2 id="tocAnchor-1-1-1">Aktueller Stand in EU</h2>
+
+<p>Driven by international incentives to reduce greenhouse gas emissions,
+interest in Electric Vehicle (EV) technology is growing rapidly throughout the world.
+To achieve the <em>EU 20-20-20</em> targets, EVs will be massively rolled out across Europe
+Existing electricity networks are constrained by how much additional capacity
+they can provide for the high integration of EV recharging systems;
+taking into account additional emerging requirements for instance:
+the electrification of residential heating and the increase in distributed renewable generation.
+Such changes can be offset by a move towards a smarter network.[1]</p>
+
+<p>Important Elements:[1]</p>
+
+<ul>
+<li>Battery Technology</li>
+<li>Electric Vehicle Supply Equipment (EVSE)</li>
+<li><p>Information and Communication Technology (ICT)</p>
+
+<p>giving support to their management, operation and maintenance.[4]</p></li>
+<li><p>Energy Management Systems</p></li>
+</ul>
+
+<p>Important Roles:[4]</p>
+
+<ul>
+<li>EV</li>
+<li>EVSE(EV Supply Equipment)</li>
+<li>EVSP(EV Service Provider)</li>
+</ul>
+
+<p>Papers:</p>
+
+<blockquote>
+<p><a href="https://www.dropbox.com/s/28h7468lqdlhlbn/Kirby%20%E5%92%8C%20Hassan%20-%202012%20-%20AC%20Recharging%20Infrastructure%20for%20EVs%20and%20future%20sm.pdf">1. AC Recharging Infrastructure for EVs and Future Smart Grid</a></p>
+
+<p><a href="https://www.dropbox.com/s/5494hcxqityy3sw/Kovacs%20%E7%AD%89.%20-%202013%20-%20Integrating%20EVs%20into%20the%20Smart-Grid.pdf">2. Integrating EVs into the Smart-Grid</a></p>
+
+<p><a href="https://www.dropbox.com/s/7a7vctnf09isvl4/Timpner%20%E5%92%8C%20Wolf%20-%202012%20-%20A%20back-end%20system%20for%20an%20autonomous%20parking%20and%20ch.pdf">3. A back-end system for an autonomous parking and charging system for electric vehicles</a></p>
+
+<p><a href="https://www.dropbox.com/s/4wssickc5it41vh/Rodriguez-Serrano%20%E7%AD%89.%20-%202013%20-%20A%20communication%20system%20from%20EV%20to%20EV%20Service%20Provi.pdf">4. A communication system from EV to EV Service Provider based on OCPP over a wireless network</a></p>
+
+<p><a href="https://www.dropbox.com/s/x9fb9b4sftr3or0/Lewandowski%20%E7%AD%89.%20-%202013%20-%20An%20ICT%20solution%20for%20integration%20of%20Electric%20Vehicl.pdf">5. An ICT solution for integration of Electric Vehicles in grid balancing services</a></p>
+</blockquote>
+
+<p>Wiki links:</p>
+
+<p>
+   <a href="http://en.wikipedia.org/wiki/Interoperability">Interoperability</a>
+</p>
+
+<p>
+   <a href="http://en.wikipedia.org/wiki/Charging_station">Charge Station</a>
+</p>
+
+<p>Articles and examples:</p>
+
+<p>
+   <a href="http://www.plugincars.com/ultimate-guide-electric-car-charging-networks-126530.html">The Ultimate Guide to Electric Car Charging Networks</a>
+</p>
+
+<p>
+   <a href="http://www.bosch-si.com/de/loesungen/mobility/unsere-loesungen/ocpp.html">SKY Network</a>
+</p>
+
+<p>
+   <em>EU 20-20-20:</em>
+</p>
+
+<p>Die Notwendigkeit einer Steigerung der Energieeffizienz ist
+Teil des „20-20-20-Ziels“ für das Jahr 2020,
+das eine Senkung des Primärenergieverbrauchs der Union und der Treibhausgasemissionen um jeweils 20%
+sowie eine Anhebung des Anteils der erneuerbaren Energiequellen auf 20 % umfasst.</p>
+
+<p>
+   <a href="http://europa.eu/legislation_summaries/energy/energy_efficiency/en0002_de.htm">Energy Efficiency</a>
+</p>
+
+<p>
+   <a href="http://www.e-control.at/de/konsumenten/oeko-energie/klima-und-umwelt/20-20-20-ziele">Klima und Umwelt</a>
+</p>
+
+<p>
+   <img src="/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-20%2022.12.06.png" alt="PEV Sales by Quarter " />
+</p>
+
+<p>
+   <a href="EPRI-ET-Update_2013-11-21.pdf">source: Plug-in Electric Vehicles Where Are We And What’s Next</a>
+</p>
+
+<h2 id="tocAnchor-1-1-2">OCPP: Open Charge Point Protocol</h2>
+
+<p><a href="http://www.openchargealliance.org/">OCPP</a> is short for Open Charge Point Protocol,
+a popular language used for communications between</p>
+
+<p>Developed by: <a href="http://www.e-laad.nl/"><strong>E-Laad Foundation</strong></a></p>
+
+<p>charging station hardware made by
+- ABB, Aeroviron- ment, Bosch, DBT, Eaton, Fuji, Schneider, Siemens, etc.</p>
+
+<p>and the managing network systems
+- like ChargePoint, ECOtality, eVgo, Greenlots, OpConnect, SemaConnect, etc.</p>
+
+<p>Useful links:</p>
+
+<p>
+   <a href="http://en.wikipedia.org/wiki/Open_Charge_Point_Protocol">Wiki Open Charge Point Protocol</a>
+</p>
+
+<p>OCPP Description:</p>
+
+<p>
+   <a href="http://www.openchargealliance.org/sites/default/files/ocpp%201%205%20-%20a%20functional%20description%20v2%200_0_0.pdf">OCPP 1.5 description</a>
+</p>
+
+<p>OCPP Specification:
+<a href="http://www.openchargealliance.org/sites/default/files/ocpp_specification_1.5_final.pdf">OCPP 1.5 specification</a></p>
+
+<p>WSDL files of OCPP:</p>
+
+<p>
+   <a href="http://www.openchargealliance.org/sites/default/files/ocpp_centralsystemservice_1.5_final.wsdl">OCPP Central System service description</a>
+</p>
+
+<p>
+   <a href="http://www.openchargealliance.org/sites/default/files/ocpp_chargepointservice_1.5_final.wsdl">OCPP Central System service description</a>
+</p>
+
+<p>
+   <img src="/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-21%2013.45.34.png" alt="Signalverlauf von OCPP und Mode 3" />
+</p>
+
+<p><strong>Controversy</strong>:</p>
+
+<p><strong>In the US</strong>, however, OCPP hasn’t quite swept across the charging industry as it has elsewhere, and much of the EVSE that has been deployed was designed prior to OCPP being widely adopted.</p>
+
+<p>The US OCPP controversy mainly stems from the fact that two companies (ECOtality and ChargePoint)
+have been the largest recipients of the government grants that kick-started the industry, and they
+don’t exclusively use OCPP. In many cases those networks use proprietary communication protocols
+that are unique to each com- pany. The gist of the gripe is that tax money was spent to give these
+companies a stranglehold on these publicly- funded installs - “vendor lock-in,” as some call it.</p>
+
+<h3>Difference between OCPP and Collaboratev</h3>
+
+<p>
+   <em>OCPP</em>
+</p>
+
+<ul>
+<li>Provides a standard path from EVSE to EVSP</li>
+<li>Enables EVSE owner to change networks without replacing hardware</li>
+<li>Prevents EVSE being stranded by a network provider going out of business</li>
+<li>Doesn’t address roaming across networks or common user credentials</li>
+</ul>
+
+<p>
+   <strong>Network Clearing House like Collaboratev or Hubject</strong>
+</p>
+
+<ul>
+<li>Allows consumers to roam across networks (note that the consumer may have
+to pay a roaming charge)</li>
+<li>All networks must participate to enable seamless roaming for consumers</li>
+<li>Needs to provide a common user credential to fully address roaming</li>
+<li>There is a cost for this service – someone must pay</li>
+<li>EVSE can still use a proprietary backhaul and participate</li>
+<li>Doesn’t prevent stranded EVSE if a network provide fails</li>
+</ul>
+
+<p>
+   <a href="http://greenlots.com/wp-content/uploads/2013/06/Charge-Magazine-OCPP-Jun-2013.pdf">Charge Magazine OCPP</a>
+</p>
+
+<p>
+   <a href="EPRI-ET-Update_2013-11-21.pdf">Plug-in Electric Vehicles Where Are We And What’s Next</a>
+</p>
+
+<h2 id="tocAnchor-1-1-3">SOAP</h2>
+
+<p>SOAP, originally defined as Simple Object Access Protocol, is a protocol specification for exchanging structured information in the implementation of web services in computer networks. It relies on XML Information Set for its message format, and usually relies on other application layer protocols, most notably Hypertext Transfer Protocol (HTTP) or Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.</p>
+
+<p>
+   <img src="/images/SOAP.svg" alt="Structure" />
+</p>
+
+<p>Example message:</p>
+<div class="highlight">
+   <pre>
+      <code class="text language-text" data-lang="text">POST /InStock HTTP/1.1
+Host: www.example.org
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: 299
+SOAPAction: "http://www.w3.org/2003/05/soap-envelope"
+&lt;?xml version="1.0"?&gt;
+&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"&gt;
+  &lt;soap:Header&gt;
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+    &lt;m:GetStockPrice xmlns:m="http://www.example.org/stock"&gt;
+      &lt;m:StockName&gt;IBM&lt;/m:StockName&gt;
+    &lt;/m:GetStockPrice&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code>
+   </pre>
+</div>
+<p>Communication:</p>
+
+<p>
+   <img src="/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-21%2011.45.16.png" alt="image" />
+</p>
+
+<p>Useful links:</p>
+
+<p>
+   <a href="http://en.wikipedia.org/wiki/SOAP">Wiki SOAP</a>
+</p>
+
+<h2 id="tocAnchor-1-1-4">WSDL</h2>
+
+<p>The Web Services Description Language (WSDL pronounced “wiz'-dul”) is an XML-based interface definition language that is used for describing the functionality offered by a web service. The acronym is also used for any specific WSDL description of a web service (also referred to as a WSDL file), which provides a machine-readable description of how the service can be called, what parameters it expects, and what data structures it returns. It thus serves a purpose that corresponds roughly to that of a method signature in a programming language.</p>
+
+<p>Useful links:</p>
+
+<p>
+   <a href="http://de.wikipedia.org/wiki/Web_Services_Description_Language">Wiki WSDL</a>
+</p>
+
+<h2 id="tocAnchor-1-1-5">Web Service</h2>
+
+<p>A software system designed to support interoperable machine-to-machine interaction over a network. It has an interface described in a machine-processable format (specifically WSDL). Other systems interact with the Web service in a manner prescribed by its description using SOAP messages, typically conveyed using HTTP with an XML serialization in conjunction with other Web-related standards.</p>
+
+<p>
+   <img src="/images/Webservices.png" alt="Web Service" />
+</p>
+
+<p>Useful links:
+<a href="http://en.wikipedia.org/wiki/Web_service">Wiki Web Service</a></p>
+
+<p>
+   <a href="http://en.wikipedia.org/wiki/Universal_Description_Discovery_and_Integration">Wiki UDDI</a>
+</p>
+
+<p>
+   <a href="http://www.w3schools.com/webservices/ws_wsdl_uddi.asp">w3schools UDDI</a>
+</p>
+
+<h2 id="tocAnchor-1-1-6">Discussions of SOAP, JSON, REST, WSDL, XML</h2>
+
+<p>Useful links:</p>
+
+<p>
+   <a href="http://stackoverflow.com/questions/16626021/json-rest-soap-wsdl-and-soa-how-do-they-all-link-together">JSON, REST, SOAP, WSDL, and SOA: How do they all link together</a>
+</p>
+
+<p>
+   <a href="http://www.ibm.com/developerworks/webservices/library/ws-restwsdl/">Describe REST Web services with WSDL 2.0</a>
+</p>
+
+<p>
+   <a href="http://www.service-architecture.com/articles/web-services/web_services_explained.html">Web Services Explained</a>
+</p>
+
+<p>
+   <a href="http://stackoverflow.com/questions/5936380/wsdl-for-soap-and-wsdl-for-rest-and-rest-based-on-json">WSDL for SOAP and WSDL for REST and REST based on JSON</a>
+</p>
+
+<h3>Frontend and Backend</h3>
+
+<p>Frontend:</p>
+
+<ul>
+<li>Ember.js</li>
+</ul>
+
+<p>Backend:</p>
+
+<ul>
+<li>Node.js</li>
+<li>Ruby on Rails</li>
+</ul>
+
+<p>Useful links:</p>
+
+<p>
+   <a href="http://reefpoints.dockyard.com/2014/05/07/building-an-ember-app-with-rails-part-1.html">Ember Cli with Rails Part 1</a>
+</p>
+
+<h1 id="tocAnchor-1-8">Research of OCPP Backend</h1>
+
+<h2 id="tocAnchor-1-8-1">Simulator</h2>
+
+<p>
+   <a href="http://www.gir.fr/ocppjs/">ocppjs - An experimental OCPP Simulator</a>
+</p>
+
+<p>The simulator can send JSON request with JSON-schema.</p>
+
+<p>
+   <a href="http://jeremydorn.com/json-editor/">Principle of JSON-schema</a>
+</p>
+
+<p>
+   <a href="http://json-schema.org/">json-schema.org</a>
+</p>
+
+<p>Communication with POSTMAN</p>
+
+<p>
+   <a href="http://www.getpostman.com/">POSTMAN</a>
+</p>
+
+<h2 id="tocAnchor-1-8-2">soapUI</h2>
+
+<p>
+   <a href="http://www.soapui.org/">SoapUI - The Home of Functional Testing</a>
+</p>
+
+<h2 id="tocAnchor-1-8-3">Communication with AJAX</h2>
+
+<p>
+   <a href="http://powerful-dusk-5787.herokuapp.com/">http://powerful-dusk-5787.herokuapp.com/</a>
+</p>
+
+<h2 id="tocAnchor-1-8-4">node-soap</h2>
+
+<p>
+   <a href="https://github.com/vpulim/node-soap">Github: node-soap</a>
+</p>
+
+<p>I have written a test demo using node-soap. Fetch the coad on my <a href="https://github.com/alfmunny/node-soap-demo">Github</a>.</p>
+
+<ul>
+<li><p>server.js
+</p><div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">soap</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'soap'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ocppCentralSystemService</span> <span class="o">=</span> <span class="p">{</span>
+<span class="nx">CentralSystemService</span><span class="o">:</span> <span class="p">{</span>
+<span class="nx">CentralSystemServiceSoap12</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">Heartbeat</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"/Heartbeat"</span><span class="p">);</span>
+                                <span class="kd">var</span> <span class="nx">dateTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+                                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dateTime</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+     <span class="k">return</span> <span class="p">{</span> <span class="nx">currentTime</span><span class="o">:</span> <span class="nx">dateTime</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="p">};</span>
+  <span class="p">},</span>
+        <span class="nx">Authorize</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+                                     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"/Authorize"</span><span class="p">);</span>
+                                     <span class="k">return</span> <span class="p">{</span> <span class="nx">idTagInfo</span><span class="o">:</span> <span class="p">{}</span> <span class="p">};</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">xml</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">).</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">'ocpp<em>centralsystemservice</em>1.5_final.wsdl'</span><span class="p">,</span> <span class="s1">'utf8'</span><span class="p">),</span>
+  <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">"404: Not Found: "</span><span class="o">+</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
+  <span class="p">});</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">9000</span><span class="p">);</span>
+<span class="nx">soap</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">,</span> <span class="nx">ocppCentralSystemService</span><span class="p">,</span> <span class="nx">xml</span><span class="p">);</span>
+</code></pre></div></li>
+<li><p>client.js
+</p><div class="highlight"><pre><code class="javascript"><span class="kd">var</span> <span class="nx">soap</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'soap'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'http://localhost:9000/?wsdl'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">soapHeader</span> <span class="o">=</span> <span class="s1">'&lt;tns:chargeBoxIdentity soap:mustUnderstand="true"&gt;'</span> <span class="o">+</span>
+                <span class="s1">'boxid'</span> <span class="o">+</span>
+              <span class="s1">'&lt;/tns:chargeBoxIdentity&gt;'</span> <span class="o">+</span>
+              <span class="s1">'&lt;wsa5:To soap:mustUnderstand="true"&gt;'</span> <span class="o">+</span>
+                <span class="s1">'http://localhost:9000'</span> <span class="o">+</span>
+              <span class="s1">'&lt;/wsa5:To&gt;'</span> <span class="o">+</span>
+              <span class="s1">'&lt;wsa5:Action soap:mustUnderstand="true"&gt;'</span> <span class="o">+</span>
+                <span class="s1">'/Heartbeat'</span> <span class="o">+</span>
+              <span class="s1">'&lt;/wsa5:Action&gt;'</span><span class="p">;</span>
+<span class="nx">soap</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span><span class="nx">endpoint</span><span class="o">:</span><span class="s1">'http://localhost:9000/'</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">describe</span><span class="p">().</span><span class="nx">CentralSystemService</span><span class="p">.</span><span class="nx">CentralSystemServiceSoap12</span><span class="p">.</span><span class="nx">Authorize</span><span class="p">);</span>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">addSoapHeader</span><span class="p">(</span><span class="nx">soapHeader</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">Heartbeat</span><span class="p">(</span><span class="nx">args</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">Authorize</span><span class="p">({</span><span class="nx">idTag</span><span class="o">:</span> <span class="s1">''</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></li>
+</ul>
+
+<h3>Test with Postman</h3>
+
+<p>Send SOAP request to node soap through POSTMAN to this demo server and get the identical respond back √</p>
+
+          <br />
+<p>
+  Til next time,<br/>
+  Yuanchen Zhang
+  <span class="muted">at 00:00</span>
+</p>
+<p>
+  <img src="/images/scribble3.png" alt="scribble" /> 
+</p>
+
+
+        </section>
+      </div>
+      
+
+      
+      <div class="block">
+  
+    <a target="_top" class="main" href="/about">About</a>
+  
+    <a target="_blank" class="main" href="http://www.incharge.ei.tum.de/">Incharge</a>
+  
+    <a target="_blank" class="main" href="mailto:alfmunny@gmail.com">Email</a>
+  
+    <a target="_blank" class="main" href="http://github.com/alfmunny">GitHub</a>
+  
+</div>
+    </div>
+    <footer>
+  <a href="http://github.com/muan/scribble" class="muted">built with Jekyll using Scribble theme</a>
+  <br />
+  <br />
+  <img src="/images/scribble2.png" alt="scribble" /> 
+</footer>
+  </body>
+</html>
