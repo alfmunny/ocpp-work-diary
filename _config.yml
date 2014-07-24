@@ -1,6 +1,7 @@
 title:            "OCPP Work Diary"
 description:      "A diary about working on a OCPP based backend for Incharge project."
 url:              "http://alfmunny.github.io/ocpp-work-diary"
+#url:              http://localhost:4000 
 signoff:          "Yuanchen Zhang"
 disqus_shortname: nodesoapdemo
 facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
