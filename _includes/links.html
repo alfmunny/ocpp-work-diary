@@ -1,9 +1,9 @@
 <div class="block">
   {% for link in site.links %}
 	{% if link.external %}
-	<a href="{{ link.url }}">{{ link.name }}</a>
+	<a class="main" href="{{ link.url }}">{{ link.name }}</a>
 	{% else %}
-	<a href="{{ site.url }}{{ link.url }}">{{ link.name }}</a>
+	<a class="main" href="{{ site.url }}{{ link.url }}">{{ link.name }}</a>
 	{% endif %}
   {% endfor %}
 </div>
