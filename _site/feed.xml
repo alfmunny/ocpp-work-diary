@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>OCPP Wokring Diary</title>
-    <description>It's a diary about working on OCPP based backend for Incharge Project.</description>
-    <link></link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <title>OCPP Work Diary</title>
+    <description>A diary about working on a OCPP based backend for Incharge project.</description>
+    <link>http://alfmunny.github.io/ocpp-work-diary</link>
+    <atom:link href="http://alfmunny.github.io/ocpp-work-diary/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Backend System von OCPP für Ladestation</title>
@@ -77,7 +77,7 @@ sowie eine Anhebung des Anteils der erneuerbaren Energiequellen auf 20 % umfasst
 
 &lt;p&gt;&lt;a href=&quot;http://www.e-control.at/de/konsumenten/oeko-energie/klima-und-umwelt/20-20-20-ziele&quot;&gt;Klima und Umwelt&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-20%2022.12.06.png&quot; alt=&quot;PEV Sales by Quarter &quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://alfmunny.github.io/ocpp-work-diary/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-20%2022.12.06.png&quot; alt=&quot;PEV Sales by Quarter &quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;EPRI-ET-Update_2013-11-21.pdf&quot;&gt;source: Plug-in Electric Vehicles Where Are We And What’s Next&lt;/a&gt;&lt;/p&gt;
 
@@ -111,7 +111,7 @@ a popular language used for communications between&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.openchargealliance.org/sites/default/files/ocpp_chargepointservice_1.5_final.wsdl&quot;&gt;OCPP Central System service description&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-21%2013.45.34.png&quot; alt=&quot;Signalverlauf von OCPP und Mode 3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://alfmunny.github.io/ocpp-work-diary/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-21%2013.45.34.png&quot; alt=&quot;Signalverlauf von OCPP und Mode 3&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Controversy&lt;/strong&gt;:&lt;/p&gt;
 
@@ -154,7 +154,7 @@ to pay a roaming charge)&lt;/li&gt;
 
 &lt;p&gt;SOAP, originally defined as Simple Object Access Protocol, is a protocol specification for exchanging structured information in the implementation of web services in computer networks. It relies on XML Information Set for its message format, and usually relies on other application layer protocols, most notably Hypertext Transfer Protocol (HTTP) or Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/SOAP.svg&quot; alt=&quot;Structure&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://alfmunny.github.io/ocpp-work-diary/images/SOAP.svg&quot; alt=&quot;Structure&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Example message:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;POST /InStock HTTP/1.1
@@ -175,7 +175,7 @@ SOAPAction: &amp;quot;http://www.w3.org/2003/05/soap-envelope&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Communication:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-21%2011.45.16.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://alfmunny.github.io/ocpp-work-diary/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202014-07-21%2011.45.16.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Useful links:&lt;/p&gt;
 
@@ -193,7 +193,7 @@ SOAPAction: &amp;quot;http://www.w3.org/2003/05/soap-envelope&amp;quot;
 
 &lt;p&gt;A software system designed to support interoperable machine-to-machine interaction over a network. It has an interface described in a machine-processable format (specifically WSDL). Other systems interact with the Web service in a manner prescribed by its description using SOAP messages, typically conveyed using HTTP with an XML serialization in conjunction with other Web-related standards.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/Webservices.png&quot; alt=&quot;Web Service&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://alfmunny.github.io/ocpp-work-diary/images/Webservices.png&quot; alt=&quot;Web Service&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Useful links:
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Web_service&quot;&gt;Wiki Web Service&lt;/a&gt;&lt;/p&gt;
@@ -324,8 +324,8 @@ SOAPAction: &amp;quot;http://www.w3.org/2003/05/soap-envelope&amp;quot;
 &lt;p&gt;Send SOAP request to node soap through POSTMAN to this demo server and get the identical respond back √&lt;/p&gt;
 </description>
         <pubDate>Wed, 23 Jul 2014 00:00:00 +0200</pubDate>
-        <link>/2014/07/23/my-diary/</link>
-        <guid isPermaLink="true">/2014/07/23/my-diary/</guid>
+        <link>http://alfmunny.github.io/ocpp-work-diary/2014/07/23/my-diary/</link>
+        <guid isPermaLink="true">http://alfmunny.github.io/ocpp-work-diary/2014/07/23/my-diary/</guid>
       </item>
     
       <item>
@@ -421,8 +421,8 @@ Problem? &lt;a href=&quot;https://github.com/muan/scribble&quot;&gt;Use GitHub I
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 06 May 2013 18:27:31 +0200</pubDate>
-        <link>/2013/05/06/scribble-the-jekyll-theme/</link>
-        <guid isPermaLink="true">/2013/05/06/scribble-the-jekyll-theme/</guid>
+        <link>http://alfmunny.github.io/ocpp-work-diary/2013/05/06/scribble-the-jekyll-theme/</link>
+        <guid isPermaLink="true">http://alfmunny.github.io/ocpp-work-diary/2013/05/06/scribble-the-jekyll-theme/</guid>
       </item>
     
       <item>
@@ -462,8 +462,8 @@ multi line
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 06 May 2013 17:27:31 +0200</pubDate>
-        <link>/2013/05/06/more-post/</link>
-        <guid isPermaLink="true">/2013/05/06/more-post/</guid>
+        <link>http://alfmunny.github.io/ocpp-work-diary/2013/05/06/more-post/</link>
+        <guid isPermaLink="true">http://alfmunny.github.io/ocpp-work-diary/2013/05/06/more-post/</guid>
       </item>
     
   </channel>
