@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  
+title: Incharge Model Schema
 date: 2014-08-05 14:44:45
 disqus: y
 ---
