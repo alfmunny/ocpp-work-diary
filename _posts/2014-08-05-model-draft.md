@@ -11,13 +11,12 @@ disqus: y
 
 ```
 user:
-  id: string
-  firstName: string
-  lastName: string
+  √ id: string
+  √ name: string
   verified: boolean
-  expiryDate: date
-  email: string
-  company: string
+  √ expiry_date: date
+  √ email: string
+  √ company: string
   avatar: string
   vehicles: hasMany('vehicle')
   chargePoints: hasMany('chargePoint')
@@ -61,9 +60,9 @@ connector:
 
 ```
 vehicle:
-  id: string
-  type:string
-  name: string
+  √ id: string
+  √ type:string
+  √ name: string
   picture: string
   users: hasMany('user')
   transactions: hasMany('transaction')
