@@ -29,7 +29,7 @@ user:
 chargePoint:
   id: string
   idTag: string
-  status: string
+  status: string|Accepted, Rejected
   location: string
   chargePointVendor: string
   chargePointModel: string
