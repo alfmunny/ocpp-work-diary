@@ -18,32 +18,33 @@ user:
   √ email: string
   √ company: string
   avatar: string
-  vehicles: hasMany('vehicle')
-  chargePoints: hasMany('chargePoint')
-  transactions: hasMany('transaction')
+  √vehicles: hasMany('vehicle')
+  √chargePoints: hasMany('chargePoint')
+  √transactions: hasMany('transaction')
 ```
 
 ## Charge Point Model
 
 ```
 chargePoint:
-  id: string
+  √id: string
   idTag: string
-  status: string|Accepted, Rejected
+  √status: string|Accepted, Rejected
   location: string
-  chargePointVendor: string
-  chargePointModel: string
-  chargePointSerialNumber: string
-  chargeBoxSerialNumber: string
-  firmwareVersion: string,
-  iccid: string,
-  imsi: string,
-  meterType: string,
-  meterSerialNumber: string
-  users: hasMany('user')
-  vehicles: hasMany('vehicle')
-  heartbeatInterval: number(in seconds)
-  transactions: hasMany('transaction')
+  √chargePointVendor: string
+  √chargePointModel: string
+  √chargePointSerialNumber: string
+  √chargeBoxSerialNumber: string
+  √firmwareVersion: string,
+  √iccid: string,
+  √imsi: string,
+  √meterType: string,
+  √meterSerialNumber: string
+  √heartbeatInterval: number(in seconds)
+  
+  √users: hasMany('user')
+  √vehicles: hasMany('vehicle')
+  √transactions: hasMany('transaction')
 
 ```
 
@@ -64,35 +65,34 @@ vehicle:
   √ type:string
   √ name: string
   picture: string
-  users: hasMany('user')
-  transactions: hasMany('transaction')
+  √users: hasMany('user')
+  √transactions: hasMany('transaction')
+  √chargePoints: hasMany('chargePoint')
 ```
 
 ## Tanscation Model
 
 ```
 transaction:
-  id: string
-  transactionId: string
-  status: string
+  √id: string
+  √transactionId: string
+  √status: string
+  √energy: number
+  √bill: number
   begin: date
   end: date
-  energy: number
-  bill: number
-  user: belongsTo('user')
-  chargePoint: belongsTo('chargePoint')
-  vehicle: belongsTo('vehicle')
-  records: hasMany('record')
+  √user: belongs_to('user')
+  √chargePoint: belongs_to('chargePoint')
+  √vehicle: belongs_to('vehicle')
+  √records: hasMany('record')
 ```
 
 ## Record Model
 
 ```
 record:
-  id: string
-  timestamp: data
-  power: number
-  current: number
-  voltage: number
-
+  √id: string
+  √power: number
+  √current: number
+  √voltage: number
 ```
