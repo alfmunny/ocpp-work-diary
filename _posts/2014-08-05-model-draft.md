@@ -52,9 +52,11 @@ chargePoint:
 
 ```
 connector:
-  id: string
+  √id: string
   connectorId: string
-  chargePoint: belongsTo('chargePoint')
+  √name: string
+  √chargePoint: belongsTo('chargePoint')
+  √trades: hasMany('trade')
 ```
 
 ## Vehicle Model
@@ -70,7 +72,7 @@ vehicle:
   √chargePoints: hasMany('chargePoint')
 ```
 
-## Tanscation Model
+## Transcation Model
 
 ```
 transaction:
@@ -95,4 +97,17 @@ record:
   √power: number
   √current: number
   √voltage: number
+```
+
+## Reservation
+
+```
+reservation:
+  id: integer
+  belongsTo('user')
+  belongsTo('vehicle')
+  belongsTo('chargePoint')
+  belongsTo('connector')
+  begin_time: date
+  end_time: date
 ```
