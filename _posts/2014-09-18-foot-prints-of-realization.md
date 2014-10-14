@@ -13,6 +13,8 @@ There are 10 actions, which will be initialized by Charge Point and sent to serv
 
 #### API: available
 
+#### Request: GET
+
 #### Function: available
 	
 #### Verified Parameters:
@@ -34,7 +36,11 @@ Considering the convenience during development is only now one of them are verif
 
 #### API: available
 #### Request: GET
-#### Function: to be fulfilled
+#### Function: available
+#### Verified Parameters
+
+1. ~~id_tag~~
+
 
 ## HeartBeat
 
@@ -49,7 +55,11 @@ Considering the convenience during development is only now one of them are verif
 #### Function: available
 #### Verified Parameters:
 
-1. id_tag: using id_tag to verified the user and it's expiry date
+1. ~~id_tag: using id_tag to verified the user and it's expiry date~~
+2. ~~vehicle_id~~
+3. ~~meter_start~~
+4. timestamp
+5. ~~connector_id~~
 
 
 ## StopTransaction:
