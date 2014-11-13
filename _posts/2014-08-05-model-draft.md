@@ -13,6 +13,7 @@ disqus: y
 user:
   √ id: string
   √ name: string
+  id_tag
   verified: boolean
   √ expiry_date: date
   √ email: string
